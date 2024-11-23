@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unauthorized Access</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('/static/images/green-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .message-box h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0 0 15px;
+        }
+
+        .message-box p {
+            font-size: 18px;
+            color: #555;
+            margin: 0 0 20px;
+        }
+
+        .message-box a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .message-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <h1>Access Denied</h1>
+        <p>You are not authorized to access this page.</p>
+        <p>If you believe this is a mistake, you can request access below.</p>
+    <form action="/request-access" method="POST">
+        <input type="hidden" name="email" value="{{ email }}">
+        <button type="submit">Request Access</button>
+    </form>
+    </div>
+</body>
+</html>
